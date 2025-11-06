@@ -10,28 +10,6 @@ function togglePopup(no) {
     }
 }
 
-// ================================================
-// HELPER: executeIfTrue
-// -----------------------------------------------
-// Fungsi ini menerima: condition (boolean), fn (fungsi yang akan dieksekusi jika condition true),
-// dan message (teks notifikasi bila condition false).
-// Cara pakai singkat:
-// executeIfTrue(dataSantri.length > 0, () => { /* aksi ketika true */ }, 'Array kosong - batal eksekusi');
-// Jika condition true -> jalankan fn(). Jika false -> tampilkan alert dengan message.
-function executeIfTrue(condition, fn, message) {
-    if (condition) {
-        try {
-            fn();
-        } catch (err) {
-            console.error('Error saat mengeksekusi fungsi:', err);
-            alert('Terjadi error saat mengeksekusi fungsi. Cek console.');
-        }
-    } else {
-        // Notifikasi sederhana bila kondisi false
-        alert(message || 'Kondisi tidak terpenuhi — tidak dieksekusi.');
-    }
-}
-
 
 // ================================================
 // EXAMPLE OF AN ARRAY OBJECT
@@ -59,8 +37,6 @@ function f2(namaData) {
     }
 }
 // f2("Data Santri")(arr3)
-// f2: higher-order function. Cara pakai: f2("Label")(array)
-// Digunakan juga oleh binding F2 pada halaman (hanya jika dataSantri.length > 0).
 
 
 // ================================================
@@ -74,13 +50,11 @@ function deleteFisrtArray() {
     dataSantri.shift() // >>> SHIFT() (Delete Only First Element in Array)
     output.innerText = dataSantri
 }
-// deleteFisrtArray(): hapus elemen pertama dari dataSantri dan perbarui #outputBox (no-op jika kosong)
 
 function deleteLastArray() {
     dataSantri.pop() // >>> POP() (Delete only Last Element in Array)
     output.innerText = dataSantri
 }
-// deleteLastArray(): hapus elemen terakhir dari dataSantri dan perbarui #outputBox
 
 document.getElementById("F2").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -99,7 +73,6 @@ function edit(index, newData) {
         output.innerText = dataSantri
         togglePopup("2")
 }
-// edit(index, newData): set dataSantri[index] = newData, update output, dan tutup modal
 
 document.getElementById("F1").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -133,24 +106,3 @@ function manipulationElementArray(data, option) {
     console.log(dataSantri);
     togglePopup('1')
 }
-// manipulationElementArray(data, option): tambahkan data ke dataSantri.
-// option: 'pop' = push (akhir), 'unshift' = unshift (awal). Biasanya dipanggil lewat form F1.
-
-// ================================================
-// BINDING: F2 key (demo executor)
-// -----------------------------------------------
-// Tekan F2 untuk menjalankan demo: jika ada data di dataSantri maka
-// f2("Data Santri")(dataSantri) akan dipanggil, dan output serta console akan menunjukkan hasilnya.
-// Jika array kosong -> alert notifikasi muncul.
-document.addEventListener('keydown', function (e) {
-    // note: e.key pada sebagian browser/OS mengembalikan 'F2' untuk tombol F2
-    if (e.key === 'F2') {
-        // Demo execution: only run if array not empty
-        executeIfTrue(dataSantri.length > 0, function () {
-            // jalankan f2 untuk menampilkan array di console
-            f2("Data Santri")(dataSantri);
-            // update output area juga agar pengguna melihat hasil di halaman
-            output.innerText = dataSantri;
-        }, 'Array kosong — tidak dieksekusi. Tambahkan data terlebih dahulu (pakai F1).');
-    }
-});

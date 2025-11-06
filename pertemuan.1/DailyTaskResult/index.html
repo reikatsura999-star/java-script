@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 10px;
+     
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: aquamarine;
+      transition:background-color 0,3s ease ;
+    }
+
+    button:hover{
+      background-color: blue;
+      transform: translateY(-5px)
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <button id="btn1" onclick="sayhello()">SelamatDatang</button>
+    <button id="btn2" onclick="resetCount()">Reset</button>
+  </div>
+
+  <script>
+    function sayhello() {
+      alert("Selamat datang di portofolio saya");
+      confirm("Nama saya Ikhya Hasnuansyah");
+      console.log("Button telah diklik");
+    }
+
+    function resetCount() {
+      alert("Button telah di-reset");
+      console.info("Button reset berhasil");
+    }
+  </script>
+</body>
+</html>

@@ -53,13 +53,13 @@ let nilai1 = nilaisiswa.map((v, i, a) => {
 }
 )
 
-let lulus = nilai1.filter((v, i, a) => {
+let lulus = nilai1.filter((v) => {
     return v.includes("lulus")
 })
 
 // console.log(lulus)
 
-let gagal = nilai1.filter((v, i, a) => {
+let gagal = nilai1.filter((v) => {
     return v.includes('gagal')
 })
 

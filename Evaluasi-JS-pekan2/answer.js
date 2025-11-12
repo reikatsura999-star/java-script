@@ -97,9 +97,6 @@ function kurvaNilai(santri, tambah) {
 //====================== soal ke 10
 
 
-  
-
-
 //======================= soal ke 11
 
 function analitikNilai(...nilai) {

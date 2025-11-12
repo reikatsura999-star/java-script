@@ -99,7 +99,7 @@ const dataSantri = [
 const santriAktif = dataSantri.filter(nama => nama.aktif);
 
 
-const santriBonus = santriAktif.map(santri => ({ ...santri, nilai: santri.nilai + 5 }));//...s arinya salin
+const santriBonus = santriAktif.map(santri => ({ ...santri, nilai: santri.nilai + 5 }));
 
 
 const nilaiaktif = santriBonus.reduce((acc, val) => {

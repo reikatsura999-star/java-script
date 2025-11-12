@@ -13,24 +13,21 @@ function hitungTotal(harga, qty, pajakPct, diskonPct) {
 let hasil = hitungTotal(10000, 3, 11, 10);
 console.log("Hasil:", hasil); // Hasil: 29970
 //======================= soal ke 2
-
 function gradeIfElse(nilai) {
-    let nilai = 90
-     
-    if(nilai >= 90){
-       console.log('A untuk nilai 90-100')
-    }else if(nilai >= 80){
-        console.log('B untuk nilai 80-89')
-    }else if(nilai >= 70){
-        console.log('C untuk nilai 70-89');
-    }else if(nilai >= 60){
-        console.log('D untuk nilai 60-69');
-    }else{
-        console.log('E untuk nilai 1-59');  
-    }
-        
+  if (nilai >= 90) {
+    console.log('A untuk nilai 90-100');
+  } else if (nilai >= 80) {
+    console.log('B untuk nilai 80-89');
+  } else if (nilai >= 70) {
+    console.log('C untuk nilai 70-79');
+  } else if (nilai >= 60) {
+    console.log('D untuk nilai 60-69');
+  } else {
+    console.log('E untuk nilai 1-59');
+  }
 }
 
+gradeIfElse(90); // Output: A untuk nilai 90-100
 //======================= soal ke-3
 
 function kategoriSwitch(kode) {
@@ -52,14 +49,13 @@ function kategoriSwitch(kode) {
 }
 
 //====================== soal ke 4
-let arr = [1,2,3,4,5,6]
+let arr = [1, 2, 3, 4, 5, 6];
 
-if(arr % 2 == 0){
-    return
-}
+let genap = arr.filter(val => val % 2 === 0);
 
-let gabunagnGenap = arr.reduce((acc,val)=> acc + val,0)
-console.log(gabunagnGenap);
+let gabunganGenap = genap.reduce((acc, val) => acc + val, 0);
+
+console.log(gabunganGenap); // Output: 12
 //====================== soal ke 5
 
 
@@ -67,35 +63,72 @@ console.log(gabunagnGenap);
 
 //====================== soal ke 6
 
-let luaspersegiPp = luasPersegiPanjang(2,4)
-
-function luasPersegiPanjang(p,l) {
-    return p * l
-}
-console.log(luaspersegiPp);
-
-let luaspersegi = luasPersegi(2,2)
-
 const luasPersegi = function(s) {
- return p * l
+  return s * s;
 };
-console.log(luasPersegi);
 
+let luaspersegi = luasPersegi(2);
+console.log(luaspersegi); // Output: 4
 //====================== soal ke 7
 
-//====================== soal ke 8
+function kelolaAntrian(list, aksi) {
+  let hasil = [...list];
+
+  if (aksi.type === "push") {
+    hasil.push(aksi.payload);
+  } else if (aksi.type === "pop") {
+    hasil.pop();
+  } else if (aksi.type === "shift") {
+    hasil.shift();
+  } else if (aksi.type === "unshift") {
+    hasil.unshift(aksi.payload);
+  } else if (aksi.type === "insert") {
+    hasil.splice(aksi.index, 0, aksi.payload);
+  } else if (aksi.type === "remove") {
+    hasil.splice(aksi.index, 1);
+  }
+
+  return hasil;
+}
+console.log(kelolaAntrian(["Ali"], { type: "push", payload: "Zaid" }));
+console.log(kelolaAntrian(["Ali", "Zaid"], { type: "remove", index: 0 }));
+
 
 //====================== soal ke 9
-let santri = [ { nama: "Ali", nilai: 70 }, { nama: "Fatimah", nilai: 90 } ]
+const santri = [
+    {nama : 'ali', nilai : 70},
+    {nama : 'fathimah', nilai : 90}
+]
 
 function kurvaNilai(santri, tambah) {
-    
-
-    let nilaiBaru = santri.map(santri => ({...santri,nilai : nilai.santri + 5}))
-    console.log(kurvaNilai)
+   return santri.map(item =>({
+    nama : item.nama,
+    nilaiBaru : item.nilai + tambah
+   }))    
 }
+const hasiil = kurvaNilai(santri,5)
+console.log(hasiil)
 //====================== soal ke 10
 
+function seleksiDanCari(arr, batas, namaDicari) {
+  const lulus = arry.filter(item => item.nilai >= batas);
+  const temuan = arry.find(item => item.nama === namaDicari) || null;
+
+  return {
+    lulus,
+    temuan
+  };
+}
+
+// Contoh penggunaan
+const arry = [
+  { nama: "Ali", nilai: 80 },
+  { nama: "Zaid", nilai: 60 }
+];
+
+const hasil1 = seleksiDanCari(arr, 70, "Ali");
+console.log("Lulus:", hasil.lulus);   
+console.log("Temuan:", hasil.temuan); 
 
 //======================= soal ke 11
 
@@ -112,8 +145,17 @@ function analitikNilai(...nilai) {
 
 //======================== soal ke 12
 
-let angka = analitikNilai(80, 90, 70, 100)
+function setGetDynamic(obj, key, value) {
+  const objBaru = { ...obj, [key]: value };
+  return {
+    value: objBaru[key],
+    obj: objBaru
+  };
+}
 
+const hasil2 = setGetDynamic({ nama: "Ali" }, "kelas", "A");
+console.log("Value:", hasil.value); 
+console.log("Objek baru:", hasil.obj); 
 //======================= soal 13
 
      function ambilDataSantri(s) {
@@ -132,20 +174,17 @@ console.log(ambilDataSantri(s));
 
 //========================== soal ke 14
  
-let = [
-    {admin: { nama: "Ali" }},
-    { asrama: { kamar: "B12" }},
-    { nilaiTambahan: [10, 20, 30]}
-]
+const data = {
+  admin: { nama: "Ali" },
+  asrama: { kamar: "B12" },
+  nilaiTambahan: [10, 20, 30]
+};
 
-function gabungProfilDanJumlah(admin, asrama, ...nilaiTambahan) {
-  let gabunagn = {...admin,...asrama}
-  let nilaiTambahan = nilaiTambahan.reduce((acc,val)=> acc + val.nilaiTambahan)
-  console.log(nilaiTambahan);
-  
-
+function gabungProfilDanJumlah(admin, asrama, nilaiTambahan) {
+  const gabungan = { ...admin, ...asrama };
+  const totalNilai = nilaiTambahan.reduce((acc, val) => acc + val, 0);
+  console.log({ ...gabungan, totalNilai });
 }
 
-
-
+gabungProfilDanJumlah(data.admin, data.asrama, data.nilaiTambahan);
 //========================== soal ke 15

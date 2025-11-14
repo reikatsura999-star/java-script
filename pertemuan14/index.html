@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>biodata</h1>
+    <p id="namaTeman"></p>
+    <p id="umurTeman"></p>
+    <script>
+        const jsonTeman = '{"nama" : "yanto" , "umur" : 30}'
+
+        const Teman = JSON.parse(jsonTeman)
+
+        document.getElementById("namaTeman").textContent = "NAMA" + Teman.nama
+        document.getElementById("umurTeman").textContent = "UMUR" + Teman.umur
+    </script>
+</body>
+</html>

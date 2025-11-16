@@ -1,9 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Produk Sederhana</title>
+  <meta charset="UTF-8">
+  <title>Produk</title>
 </head>
 <body>
-  <script src="Task.js"></script>
+  <h1>Daftar Produk</h1>
+  <ul id="list"></ul>
+
+  <script>
+    // Simpan data awal kalau belum ada    buat data baru
+    if (!localStorage.getItem("produk")) {
+      const dataAwal = [
+        { nama: "Mouse", harga: 75000 },
+        { nama: "Keyboard", harga: 150000 }
+      ];
+      localStorage.setItem("produk", JSON.stringify(dataAwal));
+    }
+
+    // Ambil data dari local
+    const data = JSON.parse(localStorage.getItem("produk"));
+
+    // Tampilkan ke halaman web
+    const list = document.getElementById("list");
+    data.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item.nama + " - Rp " + item.harga;
+      list.appendChild(li);
+    });
+  </script>
 </body>
 </html>

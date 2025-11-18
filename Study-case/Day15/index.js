@@ -263,3 +263,7 @@ console.log(ambilData);
 
 const semuaKey = Object.keys(localStorage(simpanan))
 console.log(semuaKey);
+
+//================================ no.16
+
+

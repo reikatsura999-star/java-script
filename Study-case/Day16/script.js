@@ -35,16 +35,58 @@ console.log("setelah peluncuran");
 
 //================================================================= no.2
 
+function checkConnection() {
+  console.log("🔍 Mengecek koneksi... (PENDING)");
 
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const isOnline = Math.random() > 0.3; // 70% online
+      if (isOnline) {
+        resolve("Koneksi stabil. ✅");
+      } else {
+        reject("Tidak ada koneksi internet. ❌");
+      }
+    }, 1000);
+  });
+}
 
+checkConnection()
+  .then((message) => {
+    console.log("SUCCESS:", message);
+    localStorage.setItem("connection_status",JSON.stringify(isOnline))//❌
+  })
+  .catch((error) => {
+    console.log("REJECT:", error);
+  });
+
+//belum di kerjakan
 
 
 
 //================================================================= no.3
 
+function getSettings() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        theme: "dark",
+        language: "id",
+        notifications: true
+      });
+    }, 500);
+  });
+}
 
+getSettings()
+  .then((settings) => {
+    console.log("Object settings:", settings);
+    return JSON.stringify(settings);
+  })
+  .then((settingsJSON) => {
+    console.log("Settings dalam JSON:", settingsJSON);
+  });
 
-
+//belum di kerjakan
 
 
 

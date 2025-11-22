@@ -1,0 +1,37 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="div1" class="c0">
+   <h1 id="1" class="c1" >ini h1</h1>
+   <h2 id="2" class="c2" >ini h2</h2>
+   <h3 id="3" class="c3" >ini h3</h3>
+   <h4 id="4" class="c4" >ini h4</h4>
+   <h5 id="5" class="c5" >ini h5</h5>
+   <h6 id="6" class="c6" >ini h6</h6>
+   <p  id="7" class="c7" >ini p</p>
+    <script src="dom.js"></script>
+
+    
+    </div>
+</body>
+</html> -->
+
+
+<input id="name-input" placeholder="Ketik nama..." />
+<p>Preview: <span id="name-preview">(belum ada)</span></p>
+
+<script>
+  const input = document.getElementById("name-input");
+  const preview = document.getElementById("name-preview");
+
+  input.addEventListener("keyup", () => {
+    const v = input.value.trim();
+    preview.textContent = v == "" ? "(belum ada)" : v;
+  });
+</script>

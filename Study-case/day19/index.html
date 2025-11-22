@@ -25,8 +25,35 @@
 <button id="todo-add">Tambah</button>
 <ul id="todo-list"></ul>
 
-<p id="totalTugas">Total tugas: 0</p>
-<p id="tugasSelesai">Tugas selesai: 0</p>
+<p id="info-todo">total: 0 | selesai: 0</p>
+
+<!-- highligt dan tambah data santri -->
+
+<h2>Daftar Santri</h2>
+<input id="search" placeholder="Cari..." />
+<ul id="santri-list">
+  <li>Ahmad</li>
+  <li>Bilal</li>
+  <li>Citra</li>
+  <li>Diandra</li>
+  <li>Fadhli</li>
+</ul>
+<p id="info"></p>
+
+<!-- Tab Navigasi Konten -->
+
+<div id="tabs">
+  <button data-tab="profil">Profil</button>
+  <button data-tab="kelas">Kelas</button>
+  <button data-tab="kontak">Kontak</button>
+</div>
+
+<div id="tab-content">
+  <div data-tab-content="profil">Ini Profil.</div>
+  <div data-tab-content="kelas" style="display:none;">Ini info kelas.</div>
+  <div data-tab-content="kontak" style="display:none;">Ini kontak.</div>
+</div>
+
 
 
     

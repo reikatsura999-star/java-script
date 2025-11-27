@@ -1,0 +1,181 @@
+/* Styling yang lebih modern dan responsif untuk aplikasi to-do list */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.2s; /* Efek transisi halus */
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Efek hover pada container */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.input-section {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px; /* Jarak antar elemen */
+}
+
+#task-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#task-input:focus {
+    border-color: #667eea; /* Fokus biru */
+    outline: none;
+}
+
+#add-btn {
+    padding: 12px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#add-btn:hover {
+    background-color: #45a049;
+}
+
+.filter-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.filter-btn.active {
+    background-color: #667eea;
+    color: white;
+}
+
+.filter-btn:hover {
+    background-color: #ddd;
+}
+
+#task-list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto; /* Scroll jika banyak task */
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+.task-item:hover {
+    background-color: #f9f9f9;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through; /* Coretan hanya pada teks task */
+    color: #888; /* Warna abu-abu */
+    opacity: 0.7; /* Sedikit transparan */
+}
+
+.task-text {
+    flex: 1;
+    cursor: pointer; /* Klik untuk edit */
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.task-text:hover {
+    background-color: #f0f0f0;
+}
+
+.task-text.editing {
+    background-color: #fff3cd; /* Warna kuning saat edit */
+    border: 1px solid #ffc107;
+}
+
+.complete-btn {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 5px;
+    transition: background-color 0.3s;
+}
+
+.complete-btn:hover {
+    background-color: #1976D2;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 5px;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        max-width: 100%;
+    }
+    .input-section {
+        flex-direction: column;
+    }
+    #add-btn {
+        width: 100%;
+    }
+}

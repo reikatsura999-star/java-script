@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<form id="my-form">
+    <h2>Formulir Pendaftaran perusahaan</h2>
+
+    <div class="form-group">
+        <label for="nama-lengkap">Nama Lengkap:</label>
+        <input type="text" id="nama-lengkap" name="nama" >
+        <p id="error-msg-name"></p>
+    </div>
+
+    <div class="form-group">
+        <label for="email-user">Email Aktif:</label>
+        <input type="email" id="email-user" name="email" >
+        <p id="eror-msg-email"></p>
+    </div>
+
+    <div class="form-group">
+        <label for="nomor-telp">Nomor Telepon:</label>
+        <input type="tel" id="nomor-telp" name="telepon" pattern="[0-9]{10,14}" >
+        <p id="eror-msg-notep"></p>
+    </div>
+
+    <div class="form-group">
+        <label for="tanggal-lahir">Tanggal Lahir:</label>
+        <input type="date" id="tanggal-lahir" name="tgl_lahir" >
+        <p id="eror-msg-date"></p>
+    </div>
+    
+    <div class="form-group">
+        <label for="pendidikan">Pendidikan Terakhir:</label>
+        <select id="study" name="pendidikan" >
+            <option value="">-- Pilih --</option>
+            <option value="SMA">SMA/Sederajat</option>
+            <option value="D3">Diploma (D3)</option>
+            <option value="S1">Sarjana (S1)</option>
+        </select>
+        <p id="eror-msg-study"></p>
+    </div>
+
+    <div class="form-group">
+        <label for="pengalaman">apakah Kamu Punya catatan Kriminal?</label>
+        <select name="NoteCrime" id="NoteCrime">
+            <option value="">-- Pilih --</option>
+            <option value="no">tidak</option>
+            <option value="yes">ya</option>
+        </select>
+        <p id="eror-msg-crime"></p>
+    </div>
+
+    <div class="form-group">
+        <label for="alasan-gabung">Alasan Bergabung (Min. 20 Kata):</label>
+        <textarea id="alasan-gabung" name="alasan" ></textarea>
+        <p id="eror-msg-message"></p>
+
+        <button type="submit" id="submit-btn">Kirim Pendaftaran</button>
+    </div>
+
+</form>
+<script src="script.js"></script>
+</body>
+</html>

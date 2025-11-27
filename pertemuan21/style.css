@@ -1,0 +1,78 @@
+/* Styling Utama pada ID Form */
+#pendaftaran-lengkap-form {
+    max-width: 500px;
+    margin: 50px auto; /* Membuat form di tengah halaman */
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Styling Header */
+#pendaftaran-lengkap-form h2 {
+    text-align: center;
+    color: #3f51b5; /* Warna Biru Indigo */
+    margin-bottom: 30px;
+    border-bottom: 2px solid #3f51b5;
+    padding-bottom: 10px;
+}
+
+/* Styling Class untuk Setiap Group Input */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Styling Label */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Styling Input, Select, dan Textarea (menargetkan semua jenis input) */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; 
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+/* Efek fokus pada input */
+.form-group input:focus, 
+.form-group textarea:focus, 
+.form-group select:focus {
+    border-color: #3f51b5;
+    box-shadow: 0 0 5px rgba(63, 81, 181, 0.5);
+    outline: none;
+}
+
+/* Styling Tombol dengan ID */
+#submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50; /* Warna Hijau */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+/* Efek saat tombol disentuh mouse */
+#submit-btn:hover {
+    background-color: #45a049;
+}

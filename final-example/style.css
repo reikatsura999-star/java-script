@@ -1,0 +1,210 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background halaman */
+body {
+  background: linear-gradient(135deg, #a6e1ed 0%, #2575fc 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container utama untuk login/register */
+.auth-container {
+  width: 350px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+/* Judul form */
+.form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 22px;
+}
+
+/* Label */
+.form label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #eee;
+}
+
+/* Input */
+.form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.8);
+  font-size: 14px;
+  transition: box-shadow 0.3s;
+}
+
+.form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #2575fc;
+}
+
+/* Tombol submit form */
+.form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.3s;
+}
+
+.form button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Footer text */
+.form-footer-text {
+  text-align: center;
+  font-size: 13px;
+  color: #ddd;
+  margin-top: 10px;
+}
+
+/* Tabs untuk toggle login/register */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.tabs button:hover {
+  background: rgba(255,255,255,0.4);
+  transform: translateY(-2px);
+}
+
+.tabs button.active {
+  background: #2575fc;
+}
+
+/* Hidden class */
+.hidden {
+  display: none;
+}
+
+/* Kalkulator */
+.calculator {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 300px;
+  margin-top: 20px;
+}
+
+.calculator h2 {
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+/* Display kalkulator */
+#display {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: right;
+}
+
+/* Grid tombol kalkulator */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* Tombol kalkulator */
+.grid button {
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #4CAF50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.grid button:hover {
+  background: #45a049;
+   transform: translateY(-5px)
+}
+
+#btnLogout {
+  position: absolute;  
+  top: 15px;
+  right: 15px;
+  background: #f44336;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;    
+}
+
+#btnLogout:hover {
+  background: #d32f2f;
+}
+/* Tombol Clear di tengah bawah */
+#btnClear {
+  display: block;
+  margin: 15px auto 0 auto;
+  background: #ff9800;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+#btnClear:hover { background: #e68900; }
+
+
+/* Hasil kalkulator */
+#result {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.hidden{
+  display: none;
+}

@@ -13,21 +13,27 @@ const regMsg   = document.getElementById("regMsg");
 const loginTab    = document.getElementById("loginTab");
 const registerTab = document.getElementById("registerTab");
 
+const authBox = document.getElementById("authBox")
+const calcBox = document.getElementById("calcBox")
+
 
 
 export function setupAuth() {
-  // Tab switching
-  loginTab.addEventListener("click", function(e) {
-    e.preventDefault
-    loginForm.classList.remove("hidden");
-    registerForm.classList.add("hidden");
-  });
+loginTab.addEventListener("click", () => {
+  loginForm.classList.remove("hidden");
+  registerForm.classList.add("hidden");
 
-  registerTab.addEventListener("click", () => {
-    registerForm.classList.remove("hidden");
-    loginForm.classList.add("hidden");
-  });
+  loginTab.parentElement.classList.add("hidden");   // sembunyikan tombol Login
+  registerTab.parentElement.classList.remove("hidden"); // tampilkan tombol Register
+});
 
+registerTab.addEventListener("click", () => {
+  registerForm.classList.remove("hidden");
+  loginForm.classList.add("hidden");
+
+  registerTab.parentElement.classList.add("hidden"); // sembunyikan tombol Register
+  loginTab.parentElement.classList.remove("hidden"); // tampilkan tombol Login
+});
   // Register form
   registerForm.addEventListener("submit", function(e)  {
     e.preventDefault();

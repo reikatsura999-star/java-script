@@ -27,7 +27,7 @@ export function setupCalculator() {
   if (!expression) return;
 
   try {
-    // tampilkan pesan tunggu dulu
+    // tampilkan pesan tunggu 
     result.innerText = "Tunggu 1 detik...";
 
     setTimeout(async () => { //buat agar hasil muncul dalam 2 detik

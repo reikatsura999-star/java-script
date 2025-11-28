@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Aplikasi Modular Login + Kalkulator</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- Login -->
-   
+
   <div class="auth-container" id="authBox">
+    <!-- Login Form -->
     <form id="loginForm" class="form">
       <h2>Login</h2>
       <label for="username">Username</label>
@@ -20,7 +22,8 @@
       <button type="submit">Submit</button>
       <p id="loginMsg" class="form-footer-text"></p>
     </form>
-   <!-- registrasi -->
+
+    <!-- Register Form -->
     <form id="registerForm" class="form hidden">
       <h2>Register</h2>
       <label for="regName">Username</label>
@@ -29,15 +32,19 @@
       <label for="regPassword">Password</label>
       <input type="password" id="regPassword" placeholder="Password" required>
 
-      <label for="confirm">confirm</label>
+      <label for="confirm">Confirm</label>
       <input type="text" id="confirm" placeholder="Masukan Password Kembali">
+
       <button type="submit">Submit</button>
       <p id="regMsg" class="form-footer-text"></p>
     </form>
 
+    <!-- Tabs -->
     <div class="tabs">
-      <button id="loginTab" class="active">Login</button>
-      <button id="registerTab">Register</button>
+      <button id="loginTab" class="tab active">Login</button>
+    </div>
+    <div class="tabs hidden">
+      <button id="registerTab" class="tab">Register</button>
     </div>
   </div>
 
@@ -67,19 +74,16 @@
       <button id="btnEq">=</button>
       <button id="btnPlus">+</button>
     </div>
-     
-    <p id="result">Hasil Akan Muncul di sini</p>
 
+    <p id="result">Hasil Akan Muncul di sini</p>
     <button id="btnClear">Clear</button>
 
     <div class="display">
-      <p class="p">nb: kalkulator ini di baut dengan data yg di ambil dari api.mathjs.org</p>
+      <p class="note">nb: kalkulator ini dibuat dengan data dari api.mathjs.org</p>
     </div>
   </div>
-  
- 
- 
- 
+
   <script type="module" src="js/main.js"></script>
 </body>
+
 </html>

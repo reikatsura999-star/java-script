@@ -22,20 +22,30 @@ export function setupCalculator() {
     }
   });
 
-  // tombol sama dengan
   btnEq.addEventListener("click", async (e) => {
-    e.preventDefault()
-    if (!expression) return;
-    try {
-      const res = await fetch(`https://api.mathjs.org/v4/?expr=${encodeURIComponent(expression)}`);
-      const data = await res.text();
-      result.innerText = `Hasil: ${data}`;
-      expression = data;
-      display.innerText = expression;
-    } catch {
-      result.innerText = "Error!";
-    }
-  });
+  e.preventDefault();
+  if (!expression) return;
+
+  try {
+    // tampilkan pesan tunggu dulu
+    result.innerText = "Tunggu 1 detik...";
+
+    setTimeout(async () => { //buat agar hasil muncul dalam 2 detik
+      try {
+        const res = await fetch(`https://api.mathjs.org/v4/?expr=${encodeURIComponent(expression)}`);
+        const data = await res.text();
+
+        result.innerText = `Hasil: ${data}`;
+        expression = data;
+        display.innerText = expression;
+      } catch {
+        result.innerText = "Error!";
+      }
+    }, 1000); // 1000 ms = 1 detik
+  } catch {
+    result.innerText = "Error!";
+  }
+});
 
   // tombol clear
   btnClear.addEventListener("click", (e) => {

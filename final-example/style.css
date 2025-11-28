@@ -146,6 +146,10 @@ body {
   text-align: right;
 }
 
+.p{
+  font-size: 10px;
+}
+
 /* Grid tombol kalkulator */
 .grid {
   display: grid;
